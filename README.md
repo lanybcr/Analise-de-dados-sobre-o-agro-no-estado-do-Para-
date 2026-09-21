@@ -4,7 +4,7 @@
 
 Análise de 44 culturas em 143 municípios paraenses entre 2016 e 2025, a partir da Produção Agrícola Municipal (PAM) do IBGE, tabela 5457 do SIDRA.
 
-**[Ver o dashboard online](https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Par-/)**. É um arquivo único ([`index.html`](index.html)), sem dependências, que também funciona offline.
+**[Ver o dashboard online](https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Para-/)**. É um arquivo único ([`index.html`](index.html)), sem dependências, que também funciona offline.
 
 ## O que a análise mostra
 
