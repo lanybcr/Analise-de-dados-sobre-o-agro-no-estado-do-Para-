@@ -4,7 +4,7 @@
 
 Análise de 44 culturas em 143 municípios paraenses entre 2016 e 2025, a partir da Produção Agrícola Municipal (PAM) do IBGE, tabela 5457 do SIDRA.
 
-**Dashboard interativo:** abra o [`index.html`](index.html) no navegador (arquivo único, sem dependências, funciona offline). Para publicar online, ative o GitHub Pages em *Settings → Pages → Deploy from a branch → main / (root)*.
+**[Ver o dashboard online](https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Par-/)**. É um arquivo único ([`index.html`](index.html)), sem dependências, que também funciona offline.
 
 ## O que a análise mostra
 
@@ -67,6 +67,14 @@ python src/tratamento_pam.py data/raw/tabela5457_2016-2020.xlsx data/raw/tabela5
 - Gergelim, cupuaçu, acerola, graviola e milho verde só têm dado a partir de 2025 (quebra de série): não comparar com os anos anteriores.
 - O valor em 2020 sobe 44% com a área +11%: a base não traz preços, então a causa (commodities, câmbio) é hipótese.
 - A coluna `grupo` (grãos, frutas, perenes comerciais etc.) é uma classificação analítica deste projeto, não do IBGE.
+
+## Licença
+
+O código (`src/`) e o dashboard (`index.html`) estão sob a licença [MIT](LICENSE). Os dados são do IBGE e mantêm a fonte original.
+
+## Autora
+
+**Alany** · [GitHub](https://github.com/lanybcr)
 
 ## Fonte
 
