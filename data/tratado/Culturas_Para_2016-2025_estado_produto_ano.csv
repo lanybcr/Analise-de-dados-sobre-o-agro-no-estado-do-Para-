@@ -1,0 +1,365 @@
+﻿produto;grupo;tipo_cultura;ano;area_ha;valor_mil_reais;n_municipios;pct_area_estado;pct_valor_estado;valor_por_ha_reais
+Abacate;Frutas;permanente;2016;17,0;983,0;3;0,0;0,01;57824,0
+Abacate;Frutas;permanente;2017;17,0;1340,0;3;0,0;0,01;78824,0
+Abacate;Frutas;permanente;2018;17,0;873,0;3;0,0;0,01;51353,0
+Abacate;Frutas;permanente;2019;10,0;525,0;1;0,0;0,0;52500,0
+Abacate;Frutas;permanente;2020;8,0;420,0;1;0,0;0,0;52500,0
+Abacate;Frutas;permanente;2021;8,0;700,0;1;0,0;0,0;87500,0
+Abacate;Frutas;permanente;2022;10,0;910,0;2;0,0;0,0;91000,0
+Abacate;Frutas;permanente;2023;10,0;1720,0;2;0,0;0,01;172000,0
+Abacate;Frutas;permanente;2024;7,0;556,0;2;0,0;0,0;79429,0
+Abacate;Frutas;permanente;2025;7,0;809,0;2;0,0;0,0;115571,0
+Abacaxi;Frutas;temporária;2016;13429,0;368826,0;81;0,86;3,74;27465,0
+Abacaxi;Frutas;temporária;2017;11543,0;205923,0;81;0,67;1,92;17840,0
+Abacaxi;Frutas;temporária;2018;18779,0;565211,0;84;1,1;5,61;30098,0
+Abacaxi;Frutas;temporária;2019;14032,0;271306,0;93;0,77;2,56;19335,0
+Abacaxi;Frutas;temporária;2020;13680,0;551707,0;93;0,68;3,61;40329,0
+Abacaxi;Frutas;temporária;2021;13917,0;694369,0;92;0,64;3,36;49894,0
+Abacaxi;Frutas;temporária;2022;14168,0;520258,0;92;0,61;2,14;36721,0
+Abacaxi;Frutas;temporária;2023;14001,0;1015674,0;90;0,55;3,55;72543,0
+Abacaxi;Frutas;temporária;2024;9274,0;1084065,0;87;0,33;3,02;116893,0
+Abacaxi;Frutas;temporária;2025;11054,0;1113791,0;88;0,33;2,9;100759,0
+Acerola;Frutas;permanente;2025;908,0;15481,0;48;0,03;0,04;17050,0
+Algodão herbáceo (em caroço);Fibras e fumo;temporária;2024;250,0;10500,0;1;0,01;0,03;42000,0
+Algodão herbáceo (em caroço);Fibras e fumo;temporária;2025;280,0;10408,0;1;0,01;0,03;37171,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2016;59,0;198,0;8;0,0;0,0;3356,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2017;62,0;184,0;8;0,0;0,0;2968,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2018;62,0;222,0;8;0,0;0,0;3581,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2019;97,0;245,0;9;0,01;0,0;2526,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2020;93,0;283,0;9;0,0;0,0;3043,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2021;88,0;249,0;9;0,0;0,0;2830,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2022;87,0;225,0;9;0,0;0,0;2586,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2023;87,0;616,0;9;0,0;0,0;7080,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2024;126,0;856,0;10;0,0;0,0;6794,0
+Amendoim (em casca);Grãos e oleaginosas;temporária;2025;82,0;635,0;6;0,0;0,0;7744,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2016;72973,0;149327,0;94;4,65;1,51;2046,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2017;68434,0;137668,0;96;3,96;1,29;2012,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2018;39031,0;78174,0;94;2,29;0,78;2003,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2019;38241,0;75191,0;88;2,1;0,71;1966,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2020;43542,0;93931,0;90;2,16;0,62;2157,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2021;44696,0;139223,0;90;2,07;0,67;3115,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2022;40556,0;170252,0;88;1,75;0,7;4198,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2023;35597,0;173695,0;79;1,4;0,61;4879,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2024;45449,0;233796,0;79;1,6;0,65;5144,0
+Arroz (em casca);Grãos e oleaginosas;temporária;2025;44135,0;215026,0;78;1,31;0,56;4872,0
+Açaí;Frutas;permanente;2016;166509,0;1980417,0;100;10,62;20,06;11894,0
+Açaí;Frutas;permanente;2017;188483,0;3364277,0;102;10,9;31,43;17849,0
+Açaí;Frutas;permanente;2018;172016,0;2603398,0;102;10,1;25,84;15135,0
+Açaí;Frutas;permanente;2019;188015,0;2880215,0;112;10,33;27,19;15319,0
+Açaí;Frutas;permanente;2020;212479,0;4485300,0;111;10,54;29,37;21109,0
+Açaí;Frutas;permanente;2021;198963,0;5132184,0;111;9,21;24,86;25795,0
+Açaí;Frutas;permanente;2022;224044,0;5927147,0;114;9,69;24,33;26455,0
+Açaí;Frutas;permanente;2023;226008,0;7784166,0;117;8,87;27,22;34442,0
+Açaí;Frutas;permanente;2024;252012,0;7448791,0;118;8,9;20,72;29557,0
+Açaí;Frutas;permanente;2025;270615,0;8334104,0;121;8,02;21,72;30797,0
+Banana (cacho);Frutas;permanente;2016;42510,0;671196,0;122;2,71;6,8;15789,0
+Banana (cacho);Frutas;permanente;2017;43911,0;667788,0;121;2,54;6,24;15208,0
+Banana (cacho);Frutas;permanente;2018;35348,0;541741,0;119;2,08;5,38;15326,0
+Banana (cacho);Frutas;permanente;2019;35967,0;618369,0;119;1,98;5,84;17193,0
+Banana (cacho);Frutas;permanente;2020;35656,0;680051,0;120;1,77;4,45;19073,0
+Banana (cacho);Frutas;permanente;2021;39736,0;755983,0;118;1,84;3,66;19025,0
+Banana (cacho);Frutas;permanente;2022;39126,0;891223,0;120;1,69;3,66;22778,0
+Banana (cacho);Frutas;permanente;2023;37598,0;1012204,0;119;1,48;3,54;26922,0
+Banana (cacho);Frutas;permanente;2024;36973,0;1080909,0;120;1,31;3,01;29235,0
+Banana (cacho);Frutas;permanente;2025;37786,0;1074422,0;119;1,12;2,8;28434,0
+Batata-doce;Raízes e tubérculos;temporária;2016;30,0;388,0;3;0,0;0,0;12933,0
+Batata-doce;Raízes e tubérculos;temporária;2017;30,0;352,0;3;0,0;0,0;11733,0
+Batata-doce;Raízes e tubérculos;temporária;2018;25,0;250,0;2;0,0;0,0;10000,0
+Batata-doce;Raízes e tubérculos;temporária;2019;25,0;235,0;2;0,0;0,0;9400,0
+Batata-doce;Raízes e tubérculos;temporária;2020;25,0;273,0;4;0,0;0,0;10920,0
+Batata-doce;Raízes e tubérculos;temporária;2021;27,0;305,0;4;0,0;0,0;11296,0
+Batata-doce;Raízes e tubérculos;temporária;2022;27,0;207,0;4;0,0;0,0;7667,0
+Batata-doce;Raízes e tubérculos;temporária;2023;27,0;262,0;4;0,0;0,0;9704,0
+Batata-doce;Raízes e tubérculos;temporária;2024;40,0;402,0;5;0,0;0,0;10050,0
+Batata-doce;Raízes e tubérculos;temporária;2025;24,0;265,0;4;0,0;0,0;11042,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2016;936,0;3421,0;6;0,06;0,03;3655,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2017;413,0;232,0;5;0,02;0,0;562,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2018;814,0;2822,0;5;0,05;0,03;3467,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2019;866,0;3434,0;4;0,05;0,03;3965,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2020;816,0;2978,0;3;0,04;0,02;3650,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2021;866,0;3149,0;4;0,04;0,02;3636,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2022;866,0;4365,0;4;0,04;0,02;5040,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2023;816,0;3714,0;3;0,03;0,01;4551,0
+Borracha (látex coagulado);Perenes comerciais;permanente;2024;86,0;255,0;3;0,0;0,0;2965,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2016;130193,0;789948,0;57;8,3;8,0;6068,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2017;131891,0;849559,0;58;7,63;7,94;6441,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2018;129247,0;1049657,0;60;7,59;10,42;8121,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2019;140549,0;1197408,0;63;7,72;11,3;8520,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2020;150051,0;1726030,0;65;7,44;11,3;11503,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2021;149912,0;1925806,0;64;6,94;9,33;12846,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2022;152837,0;1896310,0;65;6,61;7,78;12407,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2023;161866,0;2009792,0;68;6,35;7,03;12416,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2024;164620,0;7716788,0;78;5,81;21,46;46876,0
+Cacau (em amêndoa);Perenes comerciais;permanente;2025;170641,0;6159877,0;80;5,06;16,05;36098,0
+Café (em grão) Total;Perenes comerciais;permanente;2016;456,0;1241,0;19;0,03;0,01;2721,0
+Café (em grão) Total;Perenes comerciais;permanente;2017;460,0;1203,0;20;0,03;0,01;2615,0
+Café (em grão) Total;Perenes comerciais;permanente;2018;324,0;664,0;18;0,02;0,01;2049,0
+Café (em grão) Total;Perenes comerciais;permanente;2019;271,0;460,0;14;0,01;0,0;1697,0
+Café (em grão) Total;Perenes comerciais;permanente;2020;203,0;340,0;13;0,01;0,0;1675,0
+Café (em grão) Total;Perenes comerciais;permanente;2021;199,0;480,0;13;0,01;0,0;2412,0
+Café (em grão) Total;Perenes comerciais;permanente;2022;187,0;551,0;10;0,01;0,0;2947,0
+Café (em grão) Total;Perenes comerciais;permanente;2023;203,0;861,0;12;0,01;0,0;4241,0
+Café (em grão) Total;Perenes comerciais;permanente;2024;137,0;1870,0;8;0,0;0,01;13650,0
+Café (em grão) Total;Perenes comerciais;permanente;2025;158,0;2123,0;9;0,0;0,01;13437,0
+Cana-de-açúcar;Cana e forragens;temporária;2016;13359,0;77593,0;36;0,85;0,79;5808,0
+Cana-de-açúcar;Cana e forragens;temporária;2017;12596,0;74445,0;32;0,73;0,7;5910,0
+Cana-de-açúcar;Cana e forragens;temporária;2018;13475,0;79664,0;34;0,79;0,79;5912,0
+Cana-de-açúcar;Cana e forragens;temporária;2019;14920,0;105028,0;35;0,82;0,99;7039,0
+Cana-de-açúcar;Cana e forragens;temporária;2020;14906,0;124387,0;33;0,74;0,81;8345,0
+Cana-de-açúcar;Cana e forragens;temporária;2021;14908,0;126759,0;34;0,69;0,61;8503,0
+Cana-de-açúcar;Cana e forragens;temporária;2022;17479,0;149970,0;34;0,76;0,62;8580,0
+Cana-de-açúcar;Cana e forragens;temporária;2023;17476,0;150024,0;33;0,69;0,52;8585,0
+Cana-de-açúcar;Cana e forragens;temporária;2024;17516,0;152722,0;35;0,62;0,42;8719,0
+Cana-de-açúcar;Cana e forragens;temporária;2025;17434,0;177277,0;33;0,52;0,46;10168,0
+Castanha de caju;Perenes comerciais;permanente;2016;2323,0;3497,0;10;0,15;0,04;1505,0
+Castanha de caju;Perenes comerciais;permanente;2017;2335,0;2021,0;10;0,14;0,02;866,0
+Castanha de caju;Perenes comerciais;permanente;2018;1835,0;3719,0;13;0,11;0,04;2027,0
+Castanha de caju;Perenes comerciais;permanente;2019;1153,0;1800,0;12;0,06;0,02;1561,0
+Castanha de caju;Perenes comerciais;permanente;2020;1110,0;1560,0;12;0,06;0,01;1405,0
+Castanha de caju;Perenes comerciais;permanente;2021;1064,0;1811,0;12;0,05;0,01;1702,0
+Castanha de caju;Perenes comerciais;permanente;2022;1072,0;2158,0;12;0,05;0,01;2013,0
+Castanha de caju;Perenes comerciais;permanente;2023;1081,0;1984,0;12;0,04;0,01;1835,0
+Castanha de caju;Perenes comerciais;permanente;2024;850,0;1533,0;10;0,03;0,0;1804,0
+Castanha de caju;Perenes comerciais;permanente;2025;1005,0;1982,0;10;0,03;0,01;1972,0
+Cebola;Hortaliças;temporária;2016;15,0;630,0;1;0,0;0,01;42000,0
+Cebola;Hortaliças;temporária;2017;20,0;770,0;1;0,0;0,01;38500,0
+Cebola;Hortaliças;temporária;2018;20,0;770,0;1;0,0;0,01;38500,0
+Cebola;Hortaliças;temporária;2019;20,0;840,0;1;0,0;0,01;42000,0
+Cebola;Hortaliças;temporária;2020;21,0;1029,0;1;0,0;0,01;49000,0
+Cebola;Hortaliças;temporária;2021;20,0;700,0;1;0,0;0,0;35000,0
+Cebola;Hortaliças;temporária;2022;20,0;1190,0;1;0,0;0,0;59500,0
+Coco-da-baía;Frutas;permanente;2016;19188,0;108895,0;109;1,22;1,1;5675,0
+Coco-da-baía;Frutas;permanente;2017;18595,0;123291,0;108;1,08;1,15;6630,0
+Coco-da-baía;Frutas;permanente;2018;18581,0;108839,0;101;1,09;1,08;5858,0
+Coco-da-baía;Frutas;permanente;2019;17311,0;93655,0;100;0,95;0,88;5410,0
+Coco-da-baía;Frutas;permanente;2020;19214,0;208247,0;98;0,95;1,36;10838,0
+Coco-da-baía;Frutas;permanente;2021;17656,0;218756,0;99;0,82;1,06;12390,0
+Coco-da-baía;Frutas;permanente;2022;17459,0;215700,0;99;0,75;0,89;12355,0
+Coco-da-baía;Frutas;permanente;2023;16968,0;252510,0;93;0,67;0,88;14882,0
+Coco-da-baía;Frutas;permanente;2024;16868,0;254341,0;91;0,6;0,71;15078,0
+Coco-da-baía;Frutas;permanente;2025;19081,0;264685,0;88;0,57;0,69;13872,0
+Cupuaçu;Frutas;permanente;2025;8677,0;105855,0;91;0,26;0,28;12199,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2016;99402,0;382478,0;25;6,34;3,87;3848,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2017;101795,0;393914,0;26;5,89;3,68;3870,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2018;148879,0;548787,0;26;8,74;5,45;3686,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2019;164410,0;636696,0;28;9,03;6,01;3873,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2020;188542,0;804150,0;30;9,35;5,27;4265,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2021;183952,0;1011334,0;29;8,52;4,9;5498,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2022;185963,0;1206494,0;30;8,04;4,95;6488,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2023;186240,0;1785288,0;30;7,31;6,24;9586,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2024;204120,0;2224022,0;30;7,21;6,19;10896,0
+Dendê (cacho de coco);Perenes comerciais;permanente;2025;212596,0;2561830,0;31;6,3;6,68;12050,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2016;31361,0;83458,0;115;2,0;0,85;2661,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2017;33478,0;71082,0;115;1,94;0,66;2123,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2018;27112,0;40751,0;111;1,59;0,4;1503,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2019;27464,0;48650,0;107;1,51;0,46;1771,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2020;26199,0;56921,0;108;1,3;0,37;2173,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2021;27016,0;72159,0;109;1,25;0,35;2671,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2022;27360,0;79854,0;110;1,18;0,33;2919,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2023;26749,0;91846,0;107;1,05;0,32;3434,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2024;21374,0;70571,0;100;0,75;0,2;3302,0
+Feijão (em grão);Grãos e oleaginosas;temporária;2025;17428,0;58536,0;101;0,52;0,15;3359,0
+Fumo (em folha);Fibras e fumo;temporária;2016;19,0;91,0;3;0,0;0,0;4789,0
+Fumo (em folha);Fibras e fumo;temporária;2017;17,0;112,0;2;0,0;0,0;6588,0
+Fumo (em folha);Fibras e fumo;temporária;2018;25,0;140,0;2;0,0;0,0;5600,0
+Fumo (em folha);Fibras e fumo;temporária;2019;20,0;144,0;1;0,0;0,0;7200,0
+Fumo (em folha);Fibras e fumo;temporária;2020;20,0;224,0;1;0,0;0,0;11200,0
+Fumo (em folha);Fibras e fumo;temporária;2021;10,0;46,0;1;0,0;0,0;4600,0
+Fumo (em folha);Fibras e fumo;temporária;2022;10,0;104,0;1;0,0;0,0;10400,0
+Fumo (em folha);Fibras e fumo;temporária;2023;15,0;192,0;1;0,0;0,0;12800,0
+Fumo (em folha);Fibras e fumo;temporária;2024;30,0;291,0;1;0,0;0,0;9700,0
+Fumo (em folha);Fibras e fumo;temporária;2025;35,0;480,0;1;0,0;0,0;13714,0
+Gergelim;Grãos e oleaginosas;temporária;2025;147130,0;327643,0;15;4,36;0,85;2227,0
+Goiaba;Frutas;permanente;2016;287,0;5702,0;9;0,02;0,06;19868,0
+Goiaba;Frutas;permanente;2017;309,0;9535,0;10;0,02;0,09;30858,0
+Goiaba;Frutas;permanente;2018;313,0;5379,0;12;0,02;0,05;17185,0
+Goiaba;Frutas;permanente;2019;352,0;7009,0;10;0,02;0,07;19912,0
+Goiaba;Frutas;permanente;2020;344,0;8452,0;9;0,02;0,06;24570,0
+Goiaba;Frutas;permanente;2021;344,0;9856,0;9;0,02;0,05;28651,0
+Goiaba;Frutas;permanente;2022;342,0;11926,0;10;0,01;0,05;34871,0
+Goiaba;Frutas;permanente;2023;302,0;12127,0;11;0,01;0,04;40156,0
+Goiaba;Frutas;permanente;2024;305,0;10247,0;12;0,01;0,03;33597,0
+Goiaba;Frutas;permanente;2025;306,0;13052,0;11;0,01;0,03;42654,0
+Graviola;Frutas;permanente;2025;81,0;3036,0;5;0,0;0,01;37481,0
+Guaraná (semente);Perenes comerciais;permanente;2016;24,0;225,0;6;0,0;0,0;9375,0
+Guaraná (semente);Perenes comerciais;permanente;2017;29,0;295,0;6;0,0;0,0;10172,0
+Guaraná (semente);Perenes comerciais;permanente;2018;64,0;472,0;7;0,0;0,0;7375,0
+Guaraná (semente);Perenes comerciais;permanente;2019;67,0;491,0;7;0,0;0,0;7328,0
+Guaraná (semente);Perenes comerciais;permanente;2020;67,0;272,0;7;0,0;0,0;4060,0
+Guaraná (semente);Perenes comerciais;permanente;2021;57,0;220,0;7;0,0;0,0;3860,0
+Guaraná (semente);Perenes comerciais;permanente;2022;65,0;308,0;7;0,0;0,0;4738,0
+Guaraná (semente);Perenes comerciais;permanente;2023;65,0;913,0;7;0,0;0,0;14046,0
+Guaraná (semente);Perenes comerciais;permanente;2024;93,0;1306,0;5;0,0;0,0;14043,0
+Guaraná (semente);Perenes comerciais;permanente;2025;58,0;1748,0;4;0,0;0,0;30138,0
+Juta (fibra);Fibras e fumo;temporária;2019;4,0;9,0;1;0,0;0,0;2250,0
+Juta (fibra);Fibras e fumo;temporária;2020;5,0;9,0;1;0,0;0,0;1800,0
+Laranja;Frutas;permanente;2016;13482,0;147430,0;80;0,86;1,49;10935,0
+Laranja;Frutas;permanente;2017;17317,0;181364,0;77;1,0;1,69;10473,0
+Laranja;Frutas;permanente;2018;13633,0;116410,0;73;0,8;1,16;8539,0
+Laranja;Frutas;permanente;2019;14270,0;156511,0;72;0,78;1,48;10968,0
+Laranja;Frutas;permanente;2020;16582,0;211819,0;72;0,82;1,39;12774,0
+Laranja;Frutas;permanente;2021;14252,0;115620,0;72;0,66;0,56;8113,0
+Laranja;Frutas;permanente;2022;15197,0;175174,0;72;0,66;0,72;11527,0
+Laranja;Frutas;permanente;2023;15062,0;229105,0;72;0,59;0,8;15211,0
+Laranja;Frutas;permanente;2024;15093,0;426151,0;72;0,53;1,19;28235,0
+Laranja;Frutas;permanente;2025;18009,0;556483,0;70;0,53;1,45;30900,0
+Limão;Frutas;permanente;2016;2652,0;71350,0;47;0,17;0,72;26904,0
+Limão;Frutas;permanente;2017;3829,0;72641,0;41;0,22;0,68;18971,0
+Limão;Frutas;permanente;2018;3577,0;83705,0;43;0,21;0,83;23401,0
+Limão;Frutas;permanente;2019;5341,0;106169,0;50;0,29;1,0;19878,0
+Limão;Frutas;permanente;2020;5670,0;71825,0;51;0,28;0,47;12668,0
+Limão;Frutas;permanente;2021;3730,0;48396,0;46;0,17;0,23;12975,0
+Limão;Frutas;permanente;2022;3896,0;130127,0;50;0,17;0,53;33400,0
+Limão;Frutas;permanente;2023;4314,0;135530,0;55;0,17;0,47;31416,0
+Limão;Frutas;permanente;2024;4761,0;90619,0;58;0,17;0,25;19034,0
+Limão;Frutas;permanente;2025;5076,0;114180,0;60;0,15;0,3;22494,0
+Malva (fibra);Fibras e fumo;temporária;2016;701,0;1315,0;14;0,04;0,01;1876,0
+Malva (fibra);Fibras e fumo;temporária;2017;770,0;1691,0;9;0,04;0,02;2196,0
+Malva (fibra);Fibras e fumo;temporária;2018;781,0;1717,0;13;0,05;0,02;2198,0
+Malva (fibra);Fibras e fumo;temporária;2019;730,0;1638,0;11;0,04;0,02;2244,0
+Malva (fibra);Fibras e fumo;temporária;2020;741,0;1940,0;11;0,04;0,01;2618,0
+Malva (fibra);Fibras e fumo;temporária;2021;861,0;1889,0;11;0,04;0,01;2194,0
+Malva (fibra);Fibras e fumo;temporária;2022;754,0;2731,0;11;0,03;0,01;3622,0
+Malva (fibra);Fibras e fumo;temporária;2023;713,0;3137,0;11;0,03;0,01;4400,0
+Malva (fibra);Fibras e fumo;temporária;2024;738,0;3668,0;11;0,03;0,01;4970,0
+Malva (fibra);Fibras e fumo;temporária;2025;40,0;22,0;1;0,0;0,0;550,0
+Mamão;Frutas;permanente;2016;1602,0;26038,0;49;0,1;0,26;16253,0
+Mamão;Frutas;permanente;2017;748,0;17492,0;37;0,04;0,16;23385,0
+Mamão;Frutas;permanente;2018;1151,0;29908,0;41;0,07;0,3;25984,0
+Mamão;Frutas;permanente;2019;1065,0;24428,0;42;0,06;0,23;22937,0
+Mamão;Frutas;permanente;2020;1085,0;35391,0;43;0,05;0,23;32618,0
+Mamão;Frutas;permanente;2021;1106,0;35569,0;44;0,05;0,17;32160,0
+Mamão;Frutas;permanente;2022;1032,0;41428,0;44;0,04;0,17;40143,0
+Mamão;Frutas;permanente;2023;1055,0;47481,0;43;0,04;0,17;45006,0
+Mamão;Frutas;permanente;2024;1089,0;43399,0;47;0,04;0,12;39852,0
+Mamão;Frutas;permanente;2025;962,0;43023,0;44;0,03;0,11;44722,0
+Mandioca;Raízes e tubérculos;temporária;2016;291872,0;1933302,0;136;18,61;19,59;6624,0
+Mandioca;Raízes e tubérculos;temporária;2017;294337,0;1845764,0;139;17,02;17,25;6271,0
+Mandioca;Raízes e tubérculos;temporária;2018;265578,0;1647496,0;138;15,59;16,35;6203,0
+Mandioca;Raízes e tubérculos;temporária;2019;272905,0;1518530,0;138;14,99;14,33;5564,0
+Mandioca;Raízes e tubérculos;temporária;2020;275730,0;2178353,0;138;13,68;14,26;7900,0
+Mandioca;Raízes e tubérculos;temporária;2021;285911,0;2717385,0;138;13,24;13,16;9504,0
+Mandioca;Raízes e tubérculos;temporária;2022;278356,0;3174831,0;138;12,03;13,03;11406,0
+Mandioca;Raízes e tubérculos;temporária;2023;254370,0;4389578,0;137;9,98;15,35;17257,0
+Mandioca;Raízes e tubérculos;temporária;2024;268896,0;4640913,0;137;9,5;12,91;17259,0
+Mandioca;Raízes e tubérculos;temporária;2025;266905,0;4316169,0;139;7,91;11,25;16171,0
+Manga;Frutas;permanente;2016;38,0;451,0;5;0,0;0,0;11868,0
+Manga;Frutas;permanente;2017;38,0;398,0;5;0,0;0,0;10474,0
+Manga;Frutas;permanente;2018;37,0;450,0;4;0,0;0,0;12162,0
+Manga;Frutas;permanente;2019;20,0;244,0;3;0,0;0,0;12200,0
+Manga;Frutas;permanente;2020;8,0;106,0;1;0,0;0,0;13250,0
+Manga;Frutas;permanente;2021;8,0;108,0;1;0,0;0,0;13500,0
+Manga;Frutas;permanente;2022;14,0;298,0;1;0,0;0,0;21286,0
+Manga;Frutas;permanente;2023;14,0;302,0;1;0,0;0,0;21571,0
+Manga;Frutas;permanente;2024;14,0;60,0;1;0,0;0,0;4286,0
+Manga;Frutas;permanente;2025;14,0;60,0;1;0,0;0,0;4286,0
+Maracujá;Frutas;permanente;2016;1970,0;37357,0;71;0,13;0,38;18963,0
+Maracujá;Frutas;permanente;2017;1127,0;22797,0;55;0,07;0,21;20228,0
+Maracujá;Frutas;permanente;2018;1462,0;21151,0;57;0,09;0,21;14467,0
+Maracujá;Frutas;permanente;2019;1673,0;28929,0;64;0,09;0,27;17292,0
+Maracujá;Frutas;permanente;2020;1629,0;35757,0;64;0,08;0,23;21950,0
+Maracujá;Frutas;permanente;2021;1583,0;45942,0;66;0,07;0,22;29022,0
+Maracujá;Frutas;permanente;2022;1560,0;56162,0;68;0,07;0,23;36001,0
+Maracujá;Frutas;permanente;2023;1613,0;66801,0;66;0,06;0,23;41414,0
+Maracujá;Frutas;permanente;2024;1653,0;63858,0;69;0,06;0,18;38632,0
+Maracujá;Frutas;permanente;2025;2576,0;88179,0;69;0,08;0,23;34231,0
+Melancia;Frutas;temporária;2016;5686,0;109767,0;84;0,36;1,11;19305,0
+Melancia;Frutas;temporária;2017;4332,0;88863,0;63;0,25;0,83;20513,0
+Melancia;Frutas;temporária;2018;3982,0;72011,0;70;0,23;0,71;18084,0
+Melancia;Frutas;temporária;2019;3970,0;84403,0;73;0,22;0,8;21260,0
+Melancia;Frutas;temporária;2020;4313,0;98336,0;74;0,21;0,64;22800,0
+Melancia;Frutas;temporária;2021;4180,0;108920,0;73;0,19;0,53;26057,0
+Melancia;Frutas;temporária;2022;4213,0;118481,0;73;0,18;0,49;28123,0
+Melancia;Frutas;temporária;2023;4110,0;135696,0;73;0,16;0,47;33016,0
+Melancia;Frutas;temporária;2024;4660,0;161724,0;77;0,16;0,45;34705,0
+Melancia;Frutas;temporária;2025;4965,0;160080,0;83;0,15;0,42;32242,0
+Melão;Frutas;temporária;2016;11,0;61,0;2;0,0;0,0;5545,0
+Melão;Frutas;temporária;2017;10,0;102,0;2;0,0;0,0;10200,0
+Melão;Frutas;temporária;2018;8,0;35,0;2;0,0;0,0;4375,0
+Melão;Frutas;temporária;2019;8,0;25,0;2;0,0;0,0;3125,0
+Melão;Frutas;temporária;2020;8,0;63,0;2;0,0;0,0;7875,0
+Melão;Frutas;temporária;2021;8,0;68,0;2;0,0;0,0;8500,0
+Melão;Frutas;temporária;2022;6,0;54,0;2;0,0;0,0;9000,0
+Melão;Frutas;temporária;2023;5,0;119,0;2;0,0;0,0;23800,0
+Melão;Frutas;temporária;2024;6,0;125,0;2;0,0;0,0;20833,0
+Melão;Frutas;temporária;2025;6,0;188,0;2;0,0;0,0;31333,0
+Milho (em grão);Grãos e oleaginosas;temporária;2016;198461,0;470512,0;125;12,66;4,77;2371,0
+Milho (em grão);Grãos e oleaginosas;temporária;2017;266993,0;444531,0;126;15,44;4,15;1665,0
+Milho (em grão);Grãos e oleaginosas;temporária;2018;226708,0;457894,0;125;13,31;4,54;2020,0
+Milho (em grão);Grãos e oleaginosas;temporária;2019;259122,0;482182,0;120;14,24;4,55;1861,0
+Milho (em grão);Grãos e oleaginosas;temporária;2020;320749,0;667899,0;119;15,91;4,37;2082,0
+Milho (em grão);Grãos e oleaginosas;temporária;2021;362071,0;1360015,0;116;16,77;6,59;3756,0
+Milho (em grão);Grãos e oleaginosas;temporária;2022;405590,0;1559467,0;117;17,53;6,4;3845,0
+Milho (em grão);Grãos e oleaginosas;temporária;2023;485255,0;1972341,0;119;19,04;6,9;4065,0
+Milho (em grão);Grãos e oleaginosas;temporária;2024;477962,0;1562173,0;121;16,88;4,35;3268,0
+Milho (em grão);Grãos e oleaginosas;temporária;2025;684858,0;2869942,0;122;20,31;7,48;4191,0
+Milho verde;Hortaliças;temporária;2025;2787,0;67273,0;24;0,08;0,18;24138,0
+Palmito;Perenes comerciais;permanente;2016;575,0;4813,0;4;0,04;0,05;8370,0
+Palmito;Perenes comerciais;permanente;2017;575,0;4821,0;4;0,03;0,05;8384,0
+Palmito;Perenes comerciais;permanente;2018;520,0;3909,0;3;0,03;0,04;7517,0
+Palmito;Perenes comerciais;permanente;2019;220,0;1679,0;2;0,01;0,02;7632,0
+Palmito;Perenes comerciais;permanente;2020;220,0;897,0;2;0,01;0,01;4077,0
+Palmito;Perenes comerciais;permanente;2021;225,0;1013,0;2;0,01;0,0;4502,0
+Palmito;Perenes comerciais;permanente;2022;215,0;1675,0;2;0,01;0,01;7791,0
+Palmito;Perenes comerciais;permanente;2023;110,0;1058,0;2;0,0;0,0;9618,0
+Palmito;Perenes comerciais;permanente;2024;215,0;814,0;2;0,01;0,0;3786,0
+Pimenta-do-reino;Perenes comerciais;permanente;2016;16753,0;836181,0;81;1,07;8,47;49912,0
+Pimenta-do-reino;Perenes comerciais;permanente;2017;16289,0;515742,0;80;0,94;4,82;31662,0
+Pimenta-do-reino;Perenes comerciais;permanente;2018;15713,0;240241,0;79;0,92;2,38;15289,0
+Pimenta-do-reino;Perenes comerciais;permanente;2019;16409,0;223996,0;80;0,9;2,11;13651,0
+Pimenta-do-reino;Perenes comerciais;permanente;2020;16395,0;339781,0;81;0,81;2,22;20725,0
+Pimenta-do-reino;Perenes comerciais;permanente;2021;16322,0;458457,0;82;0,76;2,22;28088,0
+Pimenta-do-reino;Perenes comerciais;permanente;2022;18069,0;470854,0;80;0,78;1,93;26059,0
+Pimenta-do-reino;Perenes comerciais;permanente;2023;17744,0;472263,0;81;0,7;1,65;26615,0
+Pimenta-do-reino;Perenes comerciais;permanente;2024;18515,0;1248359,0;80;0,65;3,47;67424,0
+Pimenta-do-reino;Perenes comerciais;permanente;2025;18560,0;1179084,0;78;0,55;3,07;63528,0
+Soja (em grão);Grãos e oleaginosas;temporária;2016;433813,0;1574981,0;27;27,67;15,96;3631,0
+Soja (em grão);Grãos e oleaginosas;temporária;2017;500385,0;1568241,0;29;28,94;14,65;3134,0
+Soja (em grão);Grãos e oleaginosas;temporária;2018;557542,0;1744034,0;29;32,74;17,31;3128,0
+Soja (em grão);Grãos e oleaginosas;temporária;2019;577764,0;1985588,0;32;31,74;18,74;3437,0
+Soja (em grão);Grãos e oleaginosas;temporária;2020;643267,0;2823607,0;32;31,91;18,49;4389,0
+Soja (em grão);Grãos e oleaginosas;temporária;2021;753781,0;5601634,0;32;34,91;27,13;7431,0
+Soja (em grão);Grãos e oleaginosas;temporária;2022;839560,0;7483981,0;31;36,29;30,72;8914,0
+Soja (em grão);Grãos e oleaginosas;temporária;2023;1007539,0;6776978,0;32;39,54;23,7;6726,0
+Soja (em grão);Grãos e oleaginosas;temporária;2024;1194024,0;7307684,0;41;42,16;20,33;6120,0
+Soja (em grão);Grãos e oleaginosas;temporária;2025;1323964,0;8381745,0;41;39,26;21,84;6331,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2016;5270,0;4216,0;3;0,34;0,04;800,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2017;5472,0;4362,0;3;0,32;0,04;797,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2018;4485,0;4599,0;3;0,26;0,05;1025,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2019;20651,0;15668,0;8;1,13;0,15;759,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2020;20251,0;20773,0;8;1,0;0,14;1026,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2021;20537,0;35546,0;5;0,95;0,17;1731,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2022;21857,0;50142,0;7;0,94;0,21;2294,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2023;30045,0;44864,0;8;1,18;0,16;1493,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2024;72945,0;85385,0;9;2,58;0,24;1171,0
+Sorgo (em grão);Grãos e oleaginosas;temporária;2025;83330,0;136315,0;13;2,47;0,36;1636,0
+Tangerina;Frutas;permanente;2016;489,0;1408,0;14;0,03;0,01;2879,0
+Tangerina;Frutas;permanente;2017;707,0;6141,0;16;0,04;0,06;8686,0
+Tangerina;Frutas;permanente;2018;436,0;2439,0;13;0,03;0,02;5594,0
+Tangerina;Frutas;permanente;2019;976,0;6297,0;16;0,05;0,06;6452,0
+Tangerina;Frutas;permanente;2020;991,0;22975,0;16;0,05;0,15;23184,0
+Tangerina;Frutas;permanente;2021;114,0;1051,0;13;0,01;0,01;9219,0
+Tangerina;Frutas;permanente;2022;121,0;1686,0;13;0,01;0,01;13934,0
+Tangerina;Frutas;permanente;2023;121,0;2054,0;14;0,0;0,01;16975,0
+Tangerina;Frutas;permanente;2024;148,0;2647,0;15;0,01;0,01;17885,0
+Tangerina;Frutas;permanente;2025;149,0;2781,0;16;0,0;0,01;18664,0
+Tomate;Hortaliças;temporária;2016;254,0;18142,0;16;0,02;0,18;71425,0
+Tomate;Hortaliças;temporária;2017;242,0;16691,0;15;0,01;0,16;68971,0
+Tomate;Hortaliças;temporária;2018;238,0;13475,0;15;0,01;0,13;56618,0
+Tomate;Hortaliças;temporária;2019;208,0;13097,0;14;0,01;0,12;62966,0
+Tomate;Hortaliças;temporária;2020;210,0;12542,0;14;0,01;0,08;59724,0
+Tomate;Hortaliças;temporária;2021;212,0;15543,0;14;0,01;0,08;73316,0
+Tomate;Hortaliças;temporária;2022;167,0;13585,0;14;0,01;0,06;81347,0
+Tomate;Hortaliças;temporária;2023;158,0;18268,0;15;0,01;0,06;115620,0
+Tomate;Hortaliças;temporária;2024;127,0;12167,0;13;0,0;0,03;95803,0
+Tomate;Hortaliças;temporária;2025;74,0;7726,0;10;0,0;0,02;104405,0
+Urucum (semente);Perenes comerciais;permanente;2016;1248,0;5356,0;34;0,08;0,05;4292,0
+Urucum (semente);Perenes comerciais;permanente;2017;1350,0;6992,0;32;0,08;0,07;5179,0
+Urucum (semente);Perenes comerciais;permanente;2018;1318,0;5643,0;33;0,08;0,06;4281,0
+Urucum (semente);Perenes comerciais;permanente;2019;1141,0;3311,0;31;0,06;0,03;2902,0
+Urucum (semente);Perenes comerciais;permanente;2020;1015,0;3207,0;30;0,05;0,02;3160,0
+Urucum (semente);Perenes comerciais;permanente;2021;977,0;4823,0;31;0,05;0,02;4937,0
+Urucum (semente);Perenes comerciais;permanente;2022;935,0;5374,0;31;0,04;0,02;5748,0
+Urucum (semente);Perenes comerciais;permanente;2023;856,0;4370,0;31;0,03;0,02;5105,0
+Urucum (semente);Perenes comerciais;permanente;2024;852,0;9675,0;33;0,03;0,03;11356,0
+Urucum (semente);Perenes comerciais;permanente;2025;781,0;11192,0;33;0,02;0,03;14330,0
