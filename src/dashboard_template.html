@@ -484,8 +484,14 @@ function drawKpis(){
     [76,n=>fmt(n,0)+'%','Da área plantada a mais é soja e milho','+1,38 de 1,80 mi ha'],
     [70,n=>fmt(n,0)+'%','Do valor novo: soja, açaí e cacau','R$ 16,1 de R$ 23,0 bi, a preços de 2025']];
   $('kpis').innerHTML=K.map((k,i)=>`<div class="kpi"><div class="n" data-i="${i}">${k[1](k[0])}</div><div class="l">${k[2]}</div><div class="d">${k[3]}</div></div>`).join('');
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const t0=performance.now();
-  (function st(now){const p=Math.min(1,(now-t0)/1000),e=1-Math.pow(1-p,3);K.forEach((k,i)=>$('kpis').querySelector(`[data-i="${i}"]`).textContent=k[1](k[0]*e));if(p<1)requestAnimationFrame(st)})(t0);
+  const fim=()=>K.forEach((k,i)=>{const n=$('kpis').querySelector(`[data-i="${i}"]`);if(n)n.textContent=k[1](k[0])});
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const anima=()=>{const t0=performance.now();
+    (function st(now){if(document.hidden)return fim();
+      const p=Math.min(1,(now-t0)/1000),e=1-Math.pow(1-p,3);
+      K.forEach((k,i)=>{const n=$('kpis').querySelector(`[data-i="${i}"]`);if(n)n.textContent=k[1](k[0]*e)});
+      p<1?requestAnimationFrame(st):fim()})(t0)};
+  document.hidden?document.addEventListener('visibilitychange',()=>{if(!document.hidden)anima()},{once:true}):anima();
 }
 function drawStatic(){
   $('tldr').innerHTML=[['A área','76%','da área plantada a mais é soja e milho. Os dois já ocupam 60% das lavouras do estado.'],['O valor','38%','do valor sai de açaí e cacau, que ocupam só 13% da área plantada.'],['O risco','3,7×','foi o salto real do cacau em 2024 com a área parada. É preço, e preço oscila.']].map(x=>`<div><b>${x[0]}</b><span class="big">${x[1]}</span><p>${x[2]}</p></div>`).join('');
