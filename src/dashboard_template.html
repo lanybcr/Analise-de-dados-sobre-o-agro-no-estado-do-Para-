@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agro do Pará 2016–2025</title>
+<meta name="description" content="Análise de 44 culturas em 143 municípios do Pará (IBGE, Produção Agrícola Municipal): o valor da produção cresceu 2,5× em dez anos, já descontada a inflação. A soja tomou a área plantada; o açaí e o cacau trouxeram o valor.">
+<meta property="og:title" content="O agro do Pará cresceu 2,5× em dez anos">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Para-/">
+<meta property="og:image" content="https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Para-/capa.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="Dashboard interativo com dados do IBGE: 44 culturas, 143 municípios, 2016–2025. Valores deflacionados pelo IPCA.">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f5f4f0; --surface:#ffffff; --ink:#0d0d0c; --ink2:#4d4c49; --muted:#6b6a66; --grid:#ebeae6; --line:#dddcd6; --neutral:#c9c8c2;
+  --accent:#0f6b57; --accent-soft:#e3f1ec;
+  --s-soja:#eda100; --s-milho:#008300; --s-acai:#4a3aa7; --s-cacau:#e34948; --s-dende:#2a78d6; --s-mandioca:#eb6834; --s-outras:#b5b4ad;
+  --tag-dado:#184f95; --tag-hip:#8a5300; --shadow:0 1px 2px #0000000a,0 8px 24px #0000000a;
+}
+@media (prefers-color-scheme:dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme:dark;
+    --bg:#0e0e0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#9a998f; --grid:#2a2a28; --line:#33332f; --neutral:#55544f;
+    --accent:#4fc3a1; --accent-soft:#12302a;
+    --s-soja:#c98500; --s-milho:#008300; --s-acai:#9085e9; --s-cacau:#e66767; --s-dende:#3987e5; --s-mandioca:#d95926; --s-outras:#5e5d58;
+    --tag-dado:#86b6ef; --tag-hip:#f0b95a; --shadow:0 1px 2px #0006,0 8px 24px #0004;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0e0e0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#9a998f; --grid:#2a2a28; --line:#33332f; --neutral:#55544f;
+  --accent:#4fc3a1; --accent-soft:#12302a;
+  --s-soja:#c98500; --s-milho:#008300; --s-acai:#9085e9; --s-cacau:#e66767; --s-dende:#3987e5; --s-mandioca:#d95926; --s-outras:#5e5d58;
+  --tag-dado:#86b6ef; --tag-hip:#f0b95a; --shadow:0 1px 2px #0006,0 8px 24px #0004;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+b,strong{font-weight:650}
+
+.hero{background:radial-gradient(900px 420px at 88% -10%,#2f7d63 0,transparent 60%),radial-gradient(700px 380px at 0% 110%,#1c5a6b 0,transparent 55%),linear-gradient(160deg,#0a211d,#0f2f29 60%,#102a2f);color:#f3f5f2;padding:28px 0 56px}
+.hero .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:56px}
+.brand{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:#a9c9bd;font-weight:600}
+.btn{font:inherit;font-size:13px;color:#dfece6;background:#ffffff14;border:1px solid #ffffff2e;border-radius:999px;padding:6px 14px;cursor:pointer}
+.btn:hover{background:#ffffff26}
+.btn:focus-visible,select:focus-visible,.nav a:focus-visible,.cta:focus-visible,.seg button:focus-visible{outline:2px solid #7fd8bd;outline-offset:2px}
+.hero h1{font-size:clamp(32px,5.8vw,60px);line-height:1.04;letter-spacing:-.03em;margin:0 0 20px;font-weight:760;max-width:17ch}
+.hero h1 em{font-style:normal;color:#7fd8bd}
+.hero .lede{font-size:clamp(17px,2.2vw,21px);color:#d6e6df;max-width:58ch;margin:0 0 10px;font-weight:500}
+.hero .lede2{font-size:15.5px;color:#a9c9bd;max-width:62ch;margin:0 0 24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.chips li{font-size:12.5px;color:#cfe3da;background:#ffffff12;border:1px solid #ffffff22;border-radius:999px;padding:3px 12px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+.cta{display:inline-block;text-decoration:none;font-weight:650;font-size:14px;border-radius:10px;padding:10px 18px}
+.cta.p{background:#7fd8bd;color:#062018}.cta.p:hover{background:#9be6cf}
+.cta.s{border:1px solid #ffffff40;color:#eef6f2}.cta.s:hover{background:#ffffff14}
+.by{font-size:13.5px;color:#a9c9bd;margin:-30px 0 32px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:#ffffff0f;border:1px solid #ffffff1f;border-radius:14px;padding:18px}
+.kpi .n{font-size:clamp(28px,3.8vw,40px);font-weight:760;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi .l{color:#e3efe9;font-size:13.5px;margin-top:8px;font-weight:600}
+.kpi .d{color:#a9c9bd;font-size:12.5px;margin-top:2px}
+
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;font-size:13px;color:var(--ink2);padding:14px 12px;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+
+.tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.tldr div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.tldr b{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.tldr p{margin:0;font-size:14.5px}
+.tldr .big{display:block;font-size:30px;font-weight:760;letter-spacing:-.03em;line-height:1.1;margin-bottom:4px}
+
+section.sec{padding-top:64px}
+.sec-h{display:flex;gap:14px;align-items:baseline;margin:0 0 6px}
+.sec-h .no{font-size:13px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.sec-h h2{margin:0;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;line-height:1.2;font-weight:720}
+.sec-lead{margin:0 0 20px;color:var(--ink2);max-width:70ch;font-size:15.5px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+.card .sub{margin:0 0 14px;color:var(--ink2);font-size:13.5px;max-width:72ch}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.ctrl label{font-size:13px;color:var(--ink2)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;background:transparent;color:var(--ink2);border:0;padding:7px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface);font-weight:600}
+.seg button+button{border-left:1px solid var(--line)}
+select{font:inherit;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 10px;max-width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 10px;font-size:12.5px;color:var(--ink2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:inherit;fill:var(--muted);font-size:11.5px}
+svg .lbl{fill:var(--ink2)}
+svg .strong{fill:var(--ink);font-weight:600}
+svg .ann{fill:var(--ink);font-weight:650;font-size:12px}
+.note{color:var(--muted);font-size:12.5px;margin:12px 0 0}
+details.tbl{margin-top:10px;font-size:12.5px;color:var(--ink2)}
+details.tbl summary{cursor:pointer;color:var(--muted)}
+details.tbl .scroll{overflow:auto;max-height:260px;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky;top:0;background:var(--surface);color:var(--ink2)}
+.sm{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 20px}
+.sm h4{margin:0 0 2px;font-size:15px;font-weight:700}
+.sm .k{color:var(--ink2);font-size:12.5px;margin:0 0 4px}
+
+.finds{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.find{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--tag-dado);border-radius:14px;padding:18px 18px 18px 20px;box-shadow:var(--shadow)}
+.find.h{border-left-color:var(--tag-hip)}
+.find .num{font-size:32px;font-weight:760;letter-spacing:-.03em;line-height:1.05}
+.find h4{margin:8px 0 6px;font-size:15.5px;line-height:1.35}
+.find p{margin:0;color:var(--ink2);font-size:14px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:1px 9px;margin-bottom:8px}
+.tag.d{color:var(--tag-dado)}.tag.h{color:var(--tag-hip)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.step .n{width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center;font-size:13px;margin-bottom:10px}
+.step h4{margin:0 0 6px;font-size:15.5px}
+.step p{margin:0;font-size:13.5px;color:var(--ink2)}
+.step .big{font-size:22px;font-weight:760;color:var(--ink);letter-spacing:-.02em;display:block;margin-bottom:2px}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:14px}
+.ba>div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.ba .arr{background:none;border:0;padding:0;font-size:24px;color:var(--accent);text-align:center}
+.ba b{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ba p{margin:0;font-size:13.5px;color:var(--ink2)}
+.qa{columns:2;column-gap:32px;color:var(--ink2);font-size:13.5px;padding-left:18px;margin:16px 0 0}
+.qa li{break-inside:avoid;margin-bottom:6px}
+footer{margin-top:72px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--accent);text-decoration:none;font-weight:600;margin-right:14px}
+#tip{position:fixed;z-index:30;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:12.5px;box-shadow:0 8px 24px #0004;opacity:0;transition:opacity .08s;max-width:280px}
+#tip b{display:block;margin-bottom:4px}
+#tip .r{display:flex;justify-content:space-between;gap:16px;color:var(--ink2)}
+#tip .r span:last-child{color:var(--ink);font-variant-numeric:tabular-nums}
+#tip i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media (max-width:900px){.sm{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .tldr,.steps{grid-template-columns:1fr}
+  .g2,.sm,.finds{grid-template-columns:1fr}
+  .qa{columns:1}
+  .card{padding:16px}
+  .ba{grid-template-columns:1fr}.ba .arr{transform:rotate(90deg)}
+  .hero .top{margin-bottom:36px}
+}
+@media (prefers-reduced-motion:reduce){#tip,.rv{transition:none}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <span class="brand">Análise de dados · IBGE · Pará</span>
+      <button class="btn" id="theme" type="button" aria-label="Alternar tema claro/escuro">Tema claro/escuro</button>
+    </div>
+    <h1>O agro do Pará <em>cresceu 2,5×</em> em dez anos, já sem a inflação.</h1>
+    <p class="lede">A soja tomou a área plantada. O açaí e o cacau trouxeram o valor.</p>
+    <p class="lede2">Análise de 44 culturas em 143 municípios paraenses entre 2016 e 2025, a partir da Produção Agrícola Municipal do IBGE. Os valores estão deflacionados pelo IPCA, a preços de 2025: em reais correntes o crescimento pareceria 3,9×.</p>
+    <ul class="chips" aria-label="Ferramentas e escopo">
+      <li>Python · pandas</li><li>HTML · SVG · JavaScript</li><li>IBGE · SIDRA 5457</li><li>44 culturas</li><li>143 municípios</li><li>2016–2025</li><li>Valores reais (IPCA)</li>
+    </ul>
+    <div class="ctas"><a class="cta p" href="#achados">Ver as descobertas</a><a class="cta s" href="#metodo">Como tratei os dados</a></div>
+    <p class="by" id="by" hidden></p>
+    <section class="kpis" aria-label="Indicadores principais" id="kpis"></section>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Seções"><div class="wrap">
+  <a href="#panorama">Panorama</a><a href="#motores">Motores</a><a href="#terra-valor">Área × valor</a><a href="#mapa">Onde</a><a href="#municipio">Município</a><a href="#achados">Descobertas</a><a href="#metodo">Método</a>
+</div></nav>
+
+<main class="wrap">
+  <div class="tldr rv" aria-label="Resumo em 30 segundos" id="tldr"></div>
+
+  <section class="sec" id="panorama">
+    <div class="sec-h"><span class="no">01</span><h2>Dez anos em um gráfico</h2></div>
+    <p class="sec-lead">Valor e área plantada de todas as lavouras do estado, separados pelas seis culturas que mais pesam. O valor pode ser visto a preços de 2025 (comparável entre anos) ou em reais correntes.</p>
+    <div class="card rv">
+      <h3 id="t-main"></h3>
+      <p class="sub" id="s-main"></p>
+      <div class="ctrl">
+        <div class="seg" role="group" aria-label="Métrica">
+          <button type="button" data-m="v" aria-pressed="true">Valor real (R$ de 2025)</button>
+          <button type="button" data-m="vn" aria-pressed="false">Valor corrente</button>
+          <button type="button" data-m="a" aria-pressed="false">Área (mil ha)</button>
+        </div>
+      </div>
+      <div class="legend" id="lg-main"></div>
+      <div class="chart" id="c-main"></div>
+      <details class="tbl"><summary>Ver como tabela</summary><div class="scroll" id="tb-main"></div></details>
+      <p class="note">Valor real: deflacionado pelo IPCA (média anual), a preços de 2025. 2025 é resultado preliminar do IBGE. Cada ano soma de 140 a 143 municípios: onde o IBGE não divulga o total (Marituba, e Belém e Benevides em 2016), ele fica de fora.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="motores">
+    <div class="sec-h"><span class="no">02</span><h2>Quem puxou o crescimento</h2></div>
+    <p class="sec-lead">De 2016 a 2025 o estado ganhou R$ 23,0 bi em valor da produção (a preços de 2025) e 1,8 milhão de hectares de área plantada. Os motores de cada um são diferentes.</p>
+    <div class="grid g2">
+      <div class="card rv">
+        <h3>O valor novo veio de três culturas</h3>
+        <p class="sub">Aumento do valor da produção entre 2016 e 2025, por cultura, a preços de 2025. Soja, açaí e cacau somam 70% do ganho.</p>
+        <div class="chart" id="c-dv"></div>
+      </div>
+      <div class="card rv">
+        <h3>A área plantada a mais é quase toda soja e milho</h3>
+        <p class="sub">Variação da área plantada entre 2016 e 2025. Soja e milho respondem por 76% dos hectares a mais. Arroz, mandioca e feijão perderam área.</p>
+        <div class="chart" id="c-da"></div>
+        <p class="note">Dois cuidados. A área plantada conta cultivos sucessivos no mesmo terreno (o milho segunda safra costuma vir depois da soja na mesma terra), então isto não equivale a terra nova incorporada. E o gergelim só aparece na série em 2025 (quebra de série do IBGE), então os 147 mil ha dele não são crescimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="terra-valor">
+    <div class="sec-h"><span class="no">03</span><h2>Área não é valor</h2></div>
+    <p class="sec-lead">Comparar a fatia de área plantada com a fatia de valor mostra quanto cada hectare rende. É aqui que o açaí e o cacau se destacam.</p>
+    <div class="card rv">
+      <h3>A soja ocupa 39% da área e gera 22% do valor</h3>
+      <p class="sub">Participação de cada cultura na área plantada e no valor do estado em 2025. Açaí e cacau juntos ocupam 13% da área e geram 38% do valor. Passe o mouse para ver o valor por hectare, que mistura preço e produtividade.</p>
+      <div class="legend"><span><i style="background:var(--neutral)"></i>% da área</span><span><i style="background:var(--ink2)"></i>% do valor (cor da cultura)</span></div>
+      <div class="chart" id="c-share"></div>
+    </div>
+    <div class="card rv" style="margin-top:16px">
+      <h3>Cacau é preço, soja e milho são área</h3>
+      <p class="sub">Área plantada e valor real de cada cultura, base 2016 = 100. Quando o valor dispara e a área fica parada, o crescimento vem de preço ou produtividade, não de mais área. Cada painel tem escala própria.</p>
+      <div class="legend"><span><i style="background:var(--ink2);height:2px;width:14px;vertical-align:3px"></i>Área (tracejado)</span><span><i style="background:var(--ink);height:3px;width:14px;vertical-align:3px"></i>Valor (cor da cultura)</span></div>
+      <div class="sm" id="c-sm"></div>
+      <p class="note">No cacau, o valor real sobe 3,7× de 2023 para 2024 com a área +2%. O movimento coincide com a alta internacional do cacau, que não está nesta base.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="mapa">
+    <div class="sec-h"><span class="no">04</span><h2>Onde a mudança aconteceu</h2></div>
+    <p class="sec-lead">A fronteira da soja avançou, e o mapa dos municípios mais ricos em produção mudou de mãos. Valores a preços de 2025.</p>
+    <div class="grid g2">
+      <div class="card rv">
+        <h3>Soja e milho já são 60% da área plantada</h3>
+        <p class="sub">Parcela da área plantada do estado ocupada por soja e milho, lembrando que as duas podem se revezar no mesmo terreno no mesmo ano. Passe o mouse para ver quantos municípios plantam soja.</p>
+        <div class="chart" id="c-sm2"></div>
+      </div>
+      <div class="card rv">
+        <h3>Os maiores municípios em valor</h3>
+        <p class="sub">Top 10 do ano escolhido. Em 2025, Medicilândia (cacau) e Paragominas (soja) passaram Igarapé-Miri (açaí).</p>
+        <div class="ctrl"><label for="yr">Ano</label><select id="yr"></select></div>
+        <div class="chart" id="c-rank"></div>
+      </div>
+    </div>
+    <div class="card rv" style="margin-top:16px">
+      <h3>Pimenta e banana perderam o posto para açaí e soja</h3>
+      <p class="sub">Em quantos municípios cada cultura é a de maior valor da produção: 2016 contra 2025.</p>
+      <div class="legend"><span><i style="background:var(--neutral);border-radius:50%"></i>2016</span><span><i style="background:var(--ink2);border-radius:50%"></i>2025 (cor da cultura)</span></div>
+      <div class="chart" id="c-lead"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="municipio">
+    <div class="sec-h"><span class="no">05</span><h2>Explore um município</h2></div>
+    <p class="sec-lead">Escolha qualquer um dos 143 e veja o valor da produção por cultura, ano a ano, a preços de 2025.</p>
+    <div class="card rv">
+      <h3 id="t-mun"></h3>
+      <p class="sub" id="s-mun"></p>
+      <div class="ctrl"><label for="mun">Município</label><select id="mun"></select></div>
+      <div class="legend" id="lg-mun"></div>
+      <div class="chart" id="c-mun"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="achados">
+    <div class="sec-h"><span class="no">06</span><h2>O que os dados mostram</h2></div>
+    <p class="sec-lead">Oito descobertas, cada uma com o número que a sustenta. As marcadas como hipótese dependem de informação que não está na base.</p>
+    <div class="finds" id="finds"></div>
+  </section>
+
+  <section class="sec" id="metodo">
+    <div class="sec-h"><span class="no">07</span><h2>Do dado bruto ao insight</h2></div>
+    <p class="sec-lead">Os arquivos do SIDRA são relatórios, não bases analíticas. Antes de qualquer gráfico, o tratamento virou um pipeline reutilizável em Python.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><h4>Diagnóstico</h4><span class="big">14%</span><p>das células tinham número. O resto era "-" (sem cultivo) ou "..." (indisponível), misturados como texto em 3 abas.</p></div>
+      <div class="step rv"><div class="n">2</div><h4>Tratamento</h4><span class="big">62.920 linhas</span><p>em formato longo: 2 arquivos juntados, 41 culturas nunca cultivadas removidas, "-" virou zero e "..." virou nulo.</p></div>
+      <div class="step rv"><div class="n">3</div><h4>Validação</h4><span class="big">0 divergências</span><p>O total de cada município fecha com a soma das culturas em 1.420 de 1.420 casos, e a base bate com a versão anterior.</p></div>
+      <div class="step rv"><div class="n">4</div><h4>Investigação</h4><span class="big">8 achados</span><p>cruzando área, valor, município e cultura, com o valor deflacionado pelo IPCA. Cada um com número e marcado como dado ou hipótese.</p></div>
+    </div>
+    <div class="ba rv">
+      <div><b>Antes</b><p>2 arquivos × 3 abas, 149 linhas × 431 colunas cada, cabeçalho em 3 níveis e células mescladas.</p></div>
+      <div class="arr" aria-hidden="true">→</div>
+      <div><b>Depois</b><p>1 tabela (município × ano × cultura) com 21 colunas, mais totais por município, agregado estadual, dicionário e log de tratamento.</p></div>
+    </div>
+    <ul class="qa">
+      <li>Café Arábica e Canephora marcados como subcomponentes do Café Total, para não contar o café duas vezes.</li>
+      <li>5 culturas só aparecem em 2025 (gergelim, cupuaçu, acerola, graviola, milho verde): quebra de série sinalizada.</li>
+      <li>27 casos com área e valor "-": valor anulado e sinalizado, não inventado.</li>
+      <li>152 saltos de área e 16 valores por hectare atípicos foram sinalizados, não corrigidos.</li>
+      <li>Total indisponível em 10 município-anos (Marituba, e Belém e Benevides em 2016).</li>
+      <li>Valor deflacionado pelo IPCA médio anual (SIDRA, tabela 1737), a preços de 2025: 3,9× nominal equivale a 2,5× reais.</li>
+      <li>Área plantada inclui cultivos sucessivos no mesmo terreno (nota 8 do IBGE), então não equivale à área física ocupada.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="row">
+    <div id="contact"></div>
+    <div>Fonte: IBGE, Produção Agrícola Municipal, tabela 5457 (2016–2025; 2025 preliminar) e IPCA, tabela 1737. Valores deflacionados a preços de 2025. Código e dados no <a href="https://github.com/lanybcr/Analise-de-dados-sobre-o-agro-no-estado-do-Para-" rel="noopener">GitHub</a>.</div>
+  </div></div>
+</footer>
+<div id="tip" role="tooltip"></div>
+
+<script>
+const D=/*DATA*/;
+/* Autoria exibida no topo e no rodapé */
+const ME={name:'Alany',role:'Analista de dados',linkedin:'',github:'https://github.com/lanybcr',email:''};
+
+const Y=D.years,NY=Y.length,L_=NY-1;
+const C={soja:{n:'Soja',c:'var(--s-soja)'},milho:{n:'Milho',c:'var(--s-milho)'},acai:{n:'Açaí',c:'var(--s-acai)'},cacau:{n:'Cacau',c:'var(--s-cacau)'},dende:{n:'Dendê',c:'var(--s-dende)'},mandioca:{n:'Mandioca',c:'var(--s-mandioca)'},outras:{n:'Outras 38 culturas',c:'var(--s-outras)'}};
+const ORDER=['soja','milho','acai','cacau','dende','mandioca','outras'];
+const fmt=(n,d=0)=>n==null||isNaN(n)?'n/d':n.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const NS='http://www.w3.org/2000/svg',$=id=>document.getElementById(id),tip=$('tip');
+function showTip(h,ev){tip.innerHTML=h;tip.style.opacity=1;const w=tip.offsetWidth,hh=tip.offsetHeight;let x=ev.clientX+14,y=ev.clientY+14;if(x+w>innerWidth-8)x=ev.clientX-w-14;if(y+hh>innerHeight-8)y=ev.clientY-hh-14;tip.style.left=Math.max(8,x)+'px';tip.style.top=Math.max(8,y)+'px'}
+function hideTip(){tip.style.opacity=0}
+function hover(elm,fn){const on=ev=>showTip(fn(ev),ev);elm.addEventListener('mousemove',on);elm.addEventListener('click',on);elm.addEventListener('mouseleave',hideTip)}
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function tx(p,x,y,s,a={}){const t=el('text',Object.assign({x,y},a),p);t.textContent=s;return t}
+function svg(host,h){host.innerHTML='';const w=Math.max(280,host.clientWidth);const s=el('svg',{viewBox:`0 0 ${w} ${h}`,role:'img'});host.appendChild(s);return{s,w,h}}
+function niceMax(v){if(v<=0)return 1;const p=Math.pow(10,Math.floor(Math.log10(v))),f=v/p;return(f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p}
+function tk(min,max){const r=max-min;for(const n of[4,5,3,6,2]){const st=r/n,p=Math.pow(10,Math.floor(Math.log10(st))),m=Math.round(st/p*100)/100;if([1,2,2.5,5,10].includes(m))return n}return 4}
+function grid(s,x0,x1,top,bot,min,max,f){const n=tk(min,max);for(let i=0;i<=n;i++){const v=min+(max-min)*i/n,y=bot-(bot-top)*i/n;el('line',{x1:x0,x2:x1,y1:y,y2:y,stroke:'var(--grid)'},s);tx(s,x0-8,y+4,f(v),{'text-anchor':'end'})}}
+function topRound(x,y,w,h,r){r=Math.min(r,w/2,h);return`M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`}
+function hbar(x,y,w,h,r){if(w<0){x+=w;w=-w;return`M${x+w},${y}H${x+r}Q${x},${y} ${x},${y+r}V${y+h-r}Q${x},${y+h} ${x+r},${y+h}H${x+w}Z`}r=Math.min(r,w,h/2);return`M${x},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h-r}Q${x+w},${y+h} ${x+w-r},${y+h}H${x}Z`}
+function legend(host,keys){host.innerHTML=keys.map(k=>`<span><i style="background:${C[k].c}"></i>${C[k].n}</span>`).join('')}
+const R=(k,v)=>`<div class="r"><span>${k}</span><span>${v}</span></div>`;
+
+/* barras empilhadas */
+function stacked(host,series,o){
+  const{s,w,h}=svg(host,o.h||340);const L=o.left||48,Rr=8,T=o.annot?44:24,B=26,pw=w-L-Rr,ph=h-T-B;
+  const tot=Y.map((_,i)=>series.reduce((a,k)=>a+(k.v[i]||0),0)),max=niceMax(Math.max(...tot));
+  grid(s,L,w-Rr,T,T+ph,0,max,v=>fmt(v));tx(s,L-8,T-12,o.unit,{'text-anchor':'end',class:'lbl'});
+  const band=pw/NY,bw=Math.min(46,band*.66),gs=[];
+  Y.forEach((yr,i)=>{const g=el('g',{},s);gs.push(g);const x=L+band*i+(band-bw)/2;let acc=0;const seg=series.filter(k=>k.v[i]);
+    seg.forEach((k,j)=>{const hh=k.v[i]/max*ph,y=T+ph-(acc+k.v[i])/max*ph;acc+=k.v[i];el('path',{d:j===seg.length-1?topRound(x,y,bw,hh,4):`M${x},${y}h${bw}v${hh}h${-bw}Z`,fill:k.c,stroke:'var(--surface)','stroke-width':2},g)});
+    tx(s,x+bw/2,h-8,band<34?String(yr).slice(2):yr,{'text-anchor':'middle'});
+    const hit=el('rect',{x:L+band*i,y:T,width:band,height:ph,fill:'transparent'},s);
+    hover(hit,()=>{gs.forEach((q,ii)=>q.style.opacity=ii===i?1:.45);return`<b>${yr}</b>`+[...series].reverse().map(k=>`<div class="r"><span><i style="background:${k.c}"></i>${k.n}</span><span>${k.v[i]==null?'n/d':o.fv(k.v[i])}</span></div>`).join('')+`<div class="r" style="margin-top:4px;border-top:1px solid var(--grid);padding-top:4px"><span>Total</span><span>${o.fv(tot[i])}</span></div>`+(o.extra?o.extra(i):'')});
+    hit.addEventListener('mouseleave',()=>gs.forEach(q=>q.style.opacity=1));
+  });
+  (o.annot||[]).forEach(a=>{const cx=L+band*a.i+band/2,top=T+ph-tot[a.i]/max*ph;el('line',{x1:cx,x2:cx,y1:top-4,y2:top-16,stroke:'var(--ink2)'},s);tx(s,cx+(a.anchor==='end'?bw/2:0),top-22,a.text,{'text-anchor':a.anchor||'middle',class:'ann','pointer-events':'none'})});
+  s.setAttribute('aria-label',o.aria);
+}
+let metric='v';
+function drawMain(){
+  const isV=metric!=='a',div=isV?1e6:1e3;
+  $('t-main').textContent=metric==='v'?'A preços de 2025, o valor foi de R$ 15,4 bi para R$ 38,4 bi':metric==='vn'?'Em reais correntes o salto parece maior: de R$ 9,9 bi para R$ 38,4 bi':'A área plantada cresceu 2,2×, e a soja é a maior parte do que entrou';
+  $('s-main').innerHTML=metric==='v'?'Valor da produção por cultura, deflacionado pelo IPCA. Até 2019 o valor real oscilava perto de R$ 15 bi; de 2020 em diante cresceu todo ano.':metric==='vn'?'Valor da produção por cultura em reais correntes. Boa parte da diferença para a série real é inflação: o IPCA acumulou 56% no período.':'Área plantada por cultura. De 1,57 para 3,37 milhões de hectares, contando cultivos sucessivos no mesmo terreno.';
+  const ser=ORDER.map(k=>({k,n:C[k].n,c:C[k].c,v:D.state[metric][k].map(x=>x==null?null:x/div)}));
+  stacked($('c-main'),ser,{h:360,unit:isV?(metric==='v'?'R$ bi de 2025':'R$ bi correntes'):'mil ha',fv:v=>isV?'R$ '+fmt(v,2)+' bi':fmt(v,0)+' mil ha',aria:isV?'Valor da produção por cultura':'Área plantada por cultura',
+    annot:isV?[{i:Y.indexOf(2024),text:metric==='v'?'Cacau: ×3,7 em 1 ano':'Cacau: ×3,8 em 1 ano',anchor:'end'}]:[{i:L_,text:'Soja: 1,32 mi ha',anchor:'end'}],
+    extra:i=>D.ntot[i]<143?R('Municípios com total',D.ntot[i]):''});
+  const TOT=metric==='v'?D.tv:metric==='vn'?D.tvn:D.ta;
+  $('tb-main').innerHTML=`<table><thead><tr><th>Ano</th>${ORDER.map(k=>`<th>${C[k].n}</th>`).join('')}<th>Total</th></tr></thead><tbody>${Y.map((y,i)=>`<tr><td>${y}</td>${ORDER.map(k=>`<td>${fmt(D.state[metric][k][i]/div,isV?2:0)}</td>`).join('')}<td>${fmt(TOT[i]/div,isV?2:0)}</td></tr>`).join('')}</tbody></table>`;
+}
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{metric=b.dataset.m;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));drawMain()}));
+
+/* barras horizontais (com negativos) */
+function hbars(host,rows,o){
+  const rh=30,{s,w,h}=svg(host,rows.length*rh+24);const L=w<420?108:130,Rr=58,pw=w-L-Rr;
+  const mn=Math.min(0,...rows.map(r=>r[1])),mx=Math.max(...rows.map(r=>r[1]));const span=mx-mn||1,X=v=>L+(v-mn)/span*pw,x0=X(0);
+  el('line',{x1:x0,x2:x0,y1:0,y2:rows.length*rh,stroke:'var(--line)'},s);
+  rows.forEach((r,i)=>{const y=i*rh;tx(s,L-8,y+19,r[0],{'text-anchor':'end',class:'lbl'});
+    const bw=X(r[1])-x0;el('path',{d:hbar(x0,y+6,bw,18,4),fill:C[r[2]].c},s);
+    tx(s,bw>=0?x0+bw+6:x0+6,y+19,o.fv(r[1]),{'text-anchor':'start',class:'strong'});
+    const hit=el('rect',{x:0,y,width:w,height:rh,fill:'transparent'},s);hover(hit,()=>`<b>${r[0]}</b>`+R(o.name,o.fv(r[1]))+(o.pct?R('% do total',fmt(r[1]/o.pct*100,1)+'%'):''))});
+  tx(s,L,rows.length*rh+18,o.unit,{class:''});s.setAttribute('aria-label',o.aria);
+}
+
+/* terra x valor */
+function drawShare(){
+  const rows=D.share,rh=44,{s,w,h}=svg($('c-share'),rows.length*rh+28);const L=w<420?108:130,Rr=48,pw=w-L-Rr,max=40,X=v=>L+v/max*pw;
+  for(let v=0;v<=max;v+=10){el('line',{x1:X(v),x2:X(v),y1:0,y2:rows.length*rh,stroke:'var(--grid)'},s);tx(s,X(v),rows.length*rh+16,v+'%',{'text-anchor':'middle'})}
+  rows.forEach((r,i)=>{const y=i*rh;tx(s,L-8,y+24,r[0],{'text-anchor':'end',class:'lbl'});
+    el('path',{d:hbar(L,y+6,Math.max(2,X(r[1])-L),14,3),fill:'var(--neutral)'},s);tx(s,X(r[1])+5,y+17,fmt(r[1],1)+'%',{});
+    el('path',{d:hbar(L,y+22,Math.max(2,X(r[2])-L),14,3),fill:C[r[4]].c},s);tx(s,X(r[2])+5,y+33,fmt(r[2],1)+'%',{class:'strong'});
+    const hit=el('rect',{x:0,y,width:w,height:rh,fill:'transparent'},s);hover(hit,()=>`<b>${r[0]} · 2025</b>`+R('% da área',fmt(r[1],1)+'%')+R('% do valor',fmt(r[2],1)+'%')+R('Valor por hectare','R$ '+fmt(r[3])))});
+  s.setAttribute('aria-label','Participação na área e no valor por cultura em 2025');
+}
+
+/* pequenos múltiplos */
+function drawSM(){
+  const host=$('c-sm');host.innerHTML='';
+  ['soja','milho','acai','cacau','dende','mandioca'].forEach(k=>{
+    const v=D.state.v[k],a=D.state.a[k],iv=v.map(x=>x/v[0]*100),ia=a.map(x=>x/a[0]*100);
+    const box=document.createElement('div');host.appendChild(box);
+    box.innerHTML=`<h4>${C[k].n}</h4><p class="k">Valor <b>${fmt(iv[L_]/100,1)}×</b> · Área <b>${fmt(ia[L_]/100,1)}×</b></p><div class="chart"></div>`;
+    const{s,w,h}=svg(box.querySelector('.chart'),190);const L=40,Rr=46,T=10,B=24,pw=w-L-Rr,ph=h-T-B,max=niceMax(Math.max(...iv,...ia)*1.05);
+    grid(s,L,w-Rr,T,T+ph,0,max,x=>fmt(x));const X=i=>L+pw*i/L_,Yp=q=>T+ph-q/max*ph,path=arr=>arr.map((q,i)=>`${i?'L':'M'}${X(i)},${Yp(q)}`).join('');
+    el('path',{d:path(ia),fill:'none',stroke:'var(--ink2)','stroke-width':2,'stroke-dasharray':'5 4'},s);
+    el('path',{d:path(iv),fill:'none',stroke:C[k].c,'stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+    const yv=Yp(iv[L_]),ya=Yp(ia[L_]),close=Math.abs(yv-ya)<12;
+    el('circle',{cx:X(L_),cy:yv,r:4,fill:C[k].c,stroke:'var(--surface)','stroke-width':2},s);el('circle',{cx:X(L_),cy:ya,r:4,fill:'var(--ink2)',stroke:'var(--surface)','stroke-width':2},s);
+    tx(s,X(L_)+8,yv+(close?(yv<ya?-4:10):4),'Valor',{class:'strong'});tx(s,X(L_)+8,ya+(close?(ya<yv?-4:10):4),'Área',{class:'lbl'});
+    [0,4,L_].forEach(i=>tx(s,X(i),h-6,Y[i],{'text-anchor':i===0?'start':i===L_?'end':'middle'}));
+    const hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},s);
+    hover(hit,ev=>{const r=s.getBoundingClientRect(),i=Math.max(0,Math.min(L_,Math.round(((ev.clientX-r.left)*(w/r.width)-L)/pw*L_)));return`<b>${C[k].n} · ${Y[i]}</b>`+R('Valor real','R$ '+fmt(v[i]/1e6,2)+' bi ('+fmt(iv[i])+')')+R('Área plantada',fmt(a[i]/1e3)+' mil ha ('+fmt(ia[i])+')')});
+    s.setAttribute('aria-label',`${C[k].n}: área e valor, base 2016`);
+  });
+}
+
+/* linha soja+milho */
+function drawSojaMilho(){
+  const pts=D.sojamilho,{s,w,h}=svg($('c-sm2'),260);const L=44,Rr=16,T=16,B=26,pw=w-L-Rr,ph=h-T-B,min=30,max=70;
+  grid(s,L,w-Rr,T,T+ph,min,max,v=>fmt(v)+'%');const X=i=>L+pw*i/L_,Yp=v=>T+ph-(v-min)/(max-min)*ph;
+  el('path',{d:pts.map((v,i)=>`${i?'L':'M'}${X(i)},${Yp(v)}`).join(''),fill:'none',stroke:'var(--s-soja)','stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+  Y.forEach((y,i)=>{if(i%3===0||i===L_)tx(s,X(i),h-8,y,{'text-anchor':i===0?'start':i===L_?'end':'middle'})});
+  [0,L_].forEach(i=>{el('circle',{cx:X(i),cy:Yp(pts[i]),r:4,fill:'var(--s-soja)',stroke:'var(--surface)','stroke-width':2},s);tx(s,X(i)+(i?-4:4),Yp(pts[i])-10,fmt(pts[i],0)+'%',{'text-anchor':i?'end':'start',class:'strong'})});
+  const dot=el('circle',{r:5,fill:'var(--s-soja)',stroke:'var(--surface)','stroke-width':2,opacity:0},s),hit=el('rect',{x:L,y:T,width:pw,height:ph,fill:'transparent'},s);
+  hover(hit,ev=>{const r=s.getBoundingClientRect(),i=Math.max(0,Math.min(L_,Math.round(((ev.clientX-r.left)*(w/r.width)-L)/pw*L_)));dot.setAttribute('cx',X(i));dot.setAttribute('cy',Yp(pts[i]));dot.setAttribute('opacity',1);
+    return`<b>${Y[i]}</b>`+R('Soja + milho',fmt(pts[i],1)+'% da área')+R('Soja',fmt(D.state.a.soja[i]/1e3)+' mil ha')+R('Municípios com soja',D.sojamun[i])});
+  hit.addEventListener('mouseleave',()=>dot.setAttribute('opacity',0));s.setAttribute('aria-label','Parcela da área ocupada por soja e milho');
+}
+
+/* ranking */
+const LK={'Soja':'soja','Milho':'milho','Açaí':'acai','Cacau':'cacau','Dendê':'dende','Mandioca':'mandioca'};
+function drawRank(){
+  const y=$('yr').value,rows=D.rank[y],rh=30,{s,w,h}=svg($('c-rank'),rows.length*rh+22);const L=w<420?128:150,Rr=48,pw=w-L-Rr,max=niceMax(rows[0][1]);
+  rows.forEach((r,i)=>{const yy=i*rh,bw=r[1]/max*pw;tx(s,L-8,yy+19,`${i+1}. ${r[0]}`,{'text-anchor':'end',class:'lbl'});
+    el('path',{d:hbar(L,yy+6,Math.max(3,bw),18,4),fill:C[LK[r[3]]||'outras'].c},s);tx(s,L+bw+6,yy+19,fmt(r[1],2),{class:'strong'});
+    const hit=el('rect',{x:0,y:yy,width:w,height:rh,fill:'transparent'},s);hover(hit,()=>`<b>${r[0]} · ${y}</b>`+R('Valor real','R$ '+fmt(r[1],2)+' bi')+R('Cultura líder',r[3])+R('Área total',fmt(r[2])+' ha')+R('% do estado',fmt(r[4],1)+'%'))});
+  tx(s,L,rows.length*rh+16,'R$ bi de 2025 · cor = cultura de maior valor no município',{});s.setAttribute('aria-label','Ranking dos 10 maiores municípios em valor');
+}
+
+/* liderança 2016 x 2025 (halteres) */
+function drawLead(){
+  const rows=D.lead,rh=34,{s,w,h}=svg($('c-lead'),rows.length*rh+26);const L=w<420?118:140,Rr=40,pw=w-L-Rr,max=60,X=v=>L+v/max*pw;
+  for(let v=0;v<=max;v+=10){el('line',{x1:X(v),x2:X(v),y1:0,y2:rows.length*rh,stroke:'var(--grid)'},s);tx(s,X(v),rows.length*rh+16,v,{'text-anchor':'middle'})}
+  rows.forEach((r,i)=>{const y=i*rh+rh/2;tx(s,L-10,y+4,r[0],{'text-anchor':'end',class:'lbl'});
+    el('line',{x1:X(r[1]),x2:X(r[2]),y1:y,y2:y,stroke:'var(--line)','stroke-width':3,'stroke-linecap':'round'},s);
+    el('circle',{cx:X(r[1]),cy:y,r:6,fill:'var(--neutral)',stroke:'var(--surface)','stroke-width':2},s);
+    el('circle',{cx:X(r[2]),cy:y,r:7,fill:C[r[3]].c,stroke:'var(--surface)','stroke-width':2},s);
+    tx(s,X(r[2])+(r[2]>=r[1]?12:-12),y+4,r[2],{'text-anchor':r[2]>=r[1]?'start':'end',class:'strong'});
+    const hit=el('rect',{x:0,y:i*rh,width:w,height:rh,fill:'transparent'},s);hover(hit,()=>`<b>${r[0]}</b>`+R('Líder em 2016',r[1]+' municípios')+R('Líder em 2025',r[2]+' municípios'))});
+  s.setAttribute('aria-label','Número de municípios em que cada cultura é a de maior valor, 2016 e 2025');
+}
+
+/* município */
+function drawMun(){
+  const m=$('mun').value,o=D.mun[m];
+  const ser=ORDER.map(k=>({k,n:C[k].n,c:C[k].c,v:o.v[k].map(x=>x==null?null:x/1e3)}));
+  const top=ORDER.filter(k=>k!=='outras').map(k=>[k,o.v[k][L_]||0]).sort((a,b)=>b[1]-a[1])[0];
+  $('t-mun').textContent=m;
+  $('s-mun').innerHTML=o.t[L_]!=null?`Em 2025: <b>R$ ${fmt(o.t[L_]/1e6,2)} bi</b> em valor (${fmt(o.t[L_]/D.tv[L_]*100,1)}% do estado), <b>${fmt(o.a[L_])} ha</b> de área plantada`+(o.t[0]?` e ${fmt(o.t[L_]/o.t[0],1)}× o valor real de 2016`:'')+'. Valores em R$ milhões de 2025.':'O IBGE não divulga o total deste município em 2025.';
+  stacked($('c-mun'),ser,{h:300,left:56,unit:'R$ mi',fv:v=>'R$ '+fmt(v,1)+' mi',aria:'Valor da produção do município por cultura'});
+}
+
+/* achados */
+const FINDS=[
+ ['2,5×','Metade do salto do valor era inflação','A preços de 2025, o valor foi de R$ 15,4 bi para R$ 38,4 bi. Em reais correntes pareceria 3,9×: a diferença é o IPCA, que acumulou 56% no período.','d'],
+ ['76%','Da área plantada a mais é soja e milho','Foram 1,8 milhão de hectares a mais. Soja (+890 mil) e milho (+486 mil) respondem por três quartos. Parte é a mesma terra em duas safras no ano.','d'],
+ ['38%','Do valor sai de 13% da área','Açaí e cacau rendem R$ 31 mil e R$ 36 mil por hectare. A soja rende R$ 6,3 mil: ocupa 39% da área plantada e gera 22% do valor.','d'],
+ ['3,7×','Cacau em 2024: preço, não área','O valor real do cacau foi de R$ 2,2 bi para R$ 8,1 bi em um ano, com a área +2%. Coincide com a alta mundial do cacau, que não está na base.','h'],
+ ['27 → 41','Municípios plantando soja','A fronteira da soja avançou. Só Paragominas declara 300 mil ha, e soja e milho passaram de 40% para 60% da área plantada do estado.','d'],
+ ['21 → 35','Municípios onde o açaí é a cultura mais valiosa','O açaí virou líder em mais 14 municípios. Pimenta-do-reino (15 → 3) e banana (11 → 2) foram as que mais perderam esse posto.','d'],
+ ['−25 mil ha','A mandioca encolheu, mas segue líder','É a única cultura presente em quase todo o estado e ainda é a mais valiosa em 40 municípios (eram 53). Arroz e feijão também perderam área.','d'],
+ ['2020','O ano da virada','Até 2019 o valor real oscilava perto de R$ 15 bi. Em 2020 subiu 40% já descontada a inflação, com a área +11%, e seguiu subindo. Provável efeito de preços de commodities e câmbio.','h']
+];
+
+/* KPIs, resumo, contato */
+function drawKpis(){
+  const gV=D.tv[L_]/D.tv[0],gN=D.tvn[L_]/D.tvn[0],gA=D.ta[L_]/D.ta[0];
+  const K=[[D.tv[L_]/1e6,n=>'R$ '+fmt(n,1)+' bi','Valor da produção em 2025',fmt(gV,1)+'× o de 2016 em termos reais ('+fmt(gN,1)+'× sem descontar a inflação)'],
+    [D.ta[L_]/1e6,n=>fmt(n,2)+' mi ha','Área plantada em 2025',fmt(gA,1)+'× a de 2016 ('+fmt(D.ta[0]/1e6,2)+' mi ha)'],
+    [76,n=>fmt(n,0)+'%','Da área plantada a mais é soja e milho','+1,38 de 1,80 mi ha'],
+    [70,n=>fmt(n,0)+'%','Do valor novo: soja, açaí e cacau','R$ 16,1 de R$ 23,0 bi, a preços de 2025']];
+  $('kpis').innerHTML=K.map((k,i)=>`<div class="kpi"><div class="n" data-i="${i}">${k[1](k[0])}</div><div class="l">${k[2]}</div><div class="d">${k[3]}</div></div>`).join('');
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const t0=performance.now();
+  (function st(now){const p=Math.min(1,(now-t0)/1000),e=1-Math.pow(1-p,3);K.forEach((k,i)=>$('kpis').querySelector(`[data-i="${i}"]`).textContent=k[1](k[0]*e));if(p<1)requestAnimationFrame(st)})(t0);
+}
+function drawStatic(){
+  $('tldr').innerHTML=[['A área','76%','da área plantada a mais é soja e milho. Os dois já ocupam 60% das lavouras do estado.'],['O valor','38%','do valor sai de açaí e cacau, que ocupam só 13% da área plantada.'],['O risco','3,7×','foi o salto real do cacau em 2024 com a área parada. É preço, e preço oscila.']].map(x=>`<div><b>${x[0]}</b><span class="big">${x[1]}</span><p>${x[2]}</p></div>`).join('');
+  $('finds').innerHTML=FINDS.map(f=>`<div class="find ${f[3]}"><span class="tag ${f[3]}">${f[3]==='d'?'Dado':'Hipótese'}</span><div class="num">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p></div>`).join('');
+  if(ME.name){$('by').hidden=false;$('by').textContent='Por '+ME.name+(ME.role?' · '+ME.role:'')}
+  const links=[[ME.linkedin,'LinkedIn'],[ME.github,'GitHub'],[ME.email&&'mailto:'+ME.email,'E-mail']].filter(x=>x[0]);
+  $('contact').innerHTML=(ME.name?`<div style="color:var(--ink);font-weight:650;margin-bottom:4px">${ME.name}</div>`:'')+links.map(x=>`<a href="${x[0]}" rel="noopener">${x[1]}</a>`).join('');
+}
+function initUI(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06});
+  document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+  const links=[...document.querySelectorAll('.nav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const onS=()=>{let cur=-1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<120)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))};
+  addEventListener('scroll',onS,{passive:true});onS();
+  const root=document.documentElement;try{const sv=localStorage.getItem('theme');if(sv)root.setAttribute('data-theme',sv)}catch(e){}
+  $('theme').addEventListener('click',()=>{const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);const n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}});
+}
+
+legend($('lg-main'),ORDER);legend($('lg-mun'),ORDER);
+$('yr').innerHTML=Y.slice().reverse().map(y=>`<option>${y}</option>`).join('');
+$('mun').innerHTML=Object.keys(D.mun).map(m=>`<option${m==='Paragominas'?' selected':''}>${m}</option>`).join('');
+$('yr').addEventListener('change',drawRank);$('mun').addEventListener('change',drawMun);
+function drawAll(){drawMain();
+  hbars($('c-dv'),D.dv,{fv:v=>'R$ '+fmt(v,1)+' bi',name:'Valor a mais',pct:D.dv_tot,unit:'R$ bi de 2025 a mais, 2016 → 2025',aria:'Aumento do valor por cultura'});
+  hbars($('c-da'),D.da,{fv:v=>(v>0?'+':'')+fmt(v,0),name:'Área (mil ha)',pct:D.da_tot,unit:'mil ha de área plantada, 2016 → 2025',aria:'Variação da área por cultura'});
+  drawShare();drawSM();drawSojaMilho();drawRank();drawLead();drawMun()}
+drawKpis();drawStatic();drawAll();initUI();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(drawAll,120)});
+</script>
+</body>
+</html>
