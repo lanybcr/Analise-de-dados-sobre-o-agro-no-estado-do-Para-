@@ -29,6 +29,44 @@ Duas leituras exigem cuidado, e o dashboard avisa nos dois casos:
 
 Explicações que dependem de informação de fora da base (a alta internacional do cacau em 2024, por exemplo) estão marcadas como **hipótese**.
 
+## Versão em Power BI
+
+O mesmo resultado, agora sobre um **modelo estrela** e medidas em **DAX**: [`powerbi/agro_para.pbix`](powerbi/agro_para.pbix).
+
+![Dashboard em Power BI](docs/powerbi.png)
+
+**Modelo** (gerado por `src/modelo_estrela.py` em `data/modelo/`):
+
+| Tabela | Linhas | Papel |
+|---|---|---|
+| `fProducao` | 22.933 | Fato: município × ano × cultura, com área, valor nominal e valor real (preços de 2025) |
+| `dMunicipio` | 143 | Dimensão: município e UF |
+| `dCultura` | 44 | Dimensão: produto, grupo, tipo e flags (`flag_subcomponente`) |
+| `dTempo` | 10 | Dimensão: ano (2016–2025), `ano_preliminar` e fator do IPCA |
+
+Relações 1:N, filtro em uma direção, das dimensões para `fProducao`. Células "sem cultivo" não entram na fato (ausência de linha = zero); "indisponível" fica como nulo. O script confere que área e valor da fato batem com a base tratada.
+
+**Medidas DAX principais** (todas excluem o café Canephora, subcomponente do Café Total, para não contar o café duas vezes):
+
+```dax
+Area ha = CALCULATE ( SUM ( fProducao[area_ha] ), dCultura[flag_subcomponente] = FALSE () )
+
+Valor Real mil = CALCULATE ( SUM ( fProducao[valor_real_mil_reais] ), dCultura[flag_subcomponente] = FALSE () )
+
+Valor Real 2016 = CALCULATE ( [Valor Real mil], dTempo[ano] = 2016 )
+Valor Real 2025 = CALCULATE ( [Valor Real mil], dTempo[ano] = 2025 )
+Variacao Valor Real = [Valor Real 2025] - [Valor Real 2016]
+Crescimento % = DIVIDE ( [Variacao Valor Real], [Valor Real 2016] )
+Crescimento Valor Real =
+VAR v2016 = CALCULATE ( [Valor Real mil], dTempo[ano] = 2016 )
+VAR v2025 = CALCULATE ( [Valor Real mil], dTempo[ano] = 2025 )
+RETURN DIVIDE ( v2025 - v2016, v2016 )
+```
+
+Há ainda medidas só de exibição (`Valor Real bi`, `Variacao bi`, e versões em texto para os cartões em "R$ bi"). O valor está em **mil R$**; o dashboard converte para bilhões.
+
+O dashboard em Power BI reproduz os números do HTML: R$ 15,38 bi → R$ 38,38 bi (+150%), com soja, açaí e cacau no topo da variação por cultura.
+
 ## Estrutura do repositório
 
 ```
@@ -47,8 +85,11 @@ data/
     ipca_deflator.csv                                  IPCA médio anual e fator para preços de 2025
     estado_produto_ano_real.csv                        agregado com valor nominal e real
   dashboard_data.json            dados que alimentam o dashboard
+  modelo/                        modelo estrela para o Power BI (fProducao, dMunicipio, dCultura, dTempo)
+powerbi/agro_para.pbix           dashboard em Power BI (modelo + medidas DAX)
 src/
   tratamento_pam.py              limpeza e validação (gera data/tratado/)
+  modelo_estrela.py              gera as 4 tabelas do modelo estrela (data/modelo/)
   analise.py                     deflaciona, calcula os achados e gera o index.html
   dashboard_template.html        template do dashboard (marcador /*DATA*/)
 docs/dashboard.png               print das seções do dashboard
@@ -79,6 +120,9 @@ python src/tratamento_pam.py data/raw/tabela5457_2016-2020.xlsx data/raw/tabela5
 
 # 2. análise + dashboard (imprime os achados, gera data/dashboard_data.json e index.html)
 python src/analise.py
+
+# 3. modelo estrela para o Power BI (gera data/modelo/)
+python src/modelo_estrela.py
 ```
 
 O `analise.py` usa `data/apoio/ipca_deflator.csv`. Se o arquivo não existir, ele baixa a série do IPCA direto da API do SIDRA e o cria.

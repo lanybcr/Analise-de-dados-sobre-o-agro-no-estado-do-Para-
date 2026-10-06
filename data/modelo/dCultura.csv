@@ -1,0 +1,45 @@
+﻿id_cultura;produto;grupo;tipo_cultura;flag_subcomponente;flag_produto_inicio_tardio
+1;Abacate;Frutas;permanente;False;False
+2;Abacaxi;Frutas;temporária;False;False
+3;Acerola;Frutas;permanente;False;True
+4;Algodão herbáceo (em caroço);Fibras e fumo;temporária;False;False
+5;Amendoim (em casca);Grãos e oleaginosas;temporária;False;False
+6;Arroz (em casca);Grãos e oleaginosas;temporária;False;False
+7;Açaí;Frutas;permanente;False;False
+8;Banana (cacho);Frutas;permanente;False;False
+9;Batata-doce;Raízes e tubérculos;temporária;False;False
+10;Borracha (látex coagulado);Perenes comerciais;permanente;False;False
+11;Cacau (em amêndoa);Perenes comerciais;permanente;False;False
+12;Café (em grão) Canephora;Perenes comerciais;permanente;True;False
+13;Café (em grão) Total;Perenes comerciais;permanente;False;False
+14;Cana-de-açúcar;Cana e forragens;temporária;False;False
+15;Castanha de caju;Perenes comerciais;permanente;False;False
+16;Cebola;Hortaliças;temporária;False;False
+17;Coco-da-baía;Frutas;permanente;False;False
+18;Cupuaçu;Frutas;permanente;False;True
+19;Dendê (cacho de coco);Perenes comerciais;permanente;False;False
+20;Feijão (em grão);Grãos e oleaginosas;temporária;False;False
+21;Fumo (em folha);Fibras e fumo;temporária;False;False
+22;Gergelim;Grãos e oleaginosas;temporária;False;True
+23;Goiaba;Frutas;permanente;False;False
+24;Graviola;Frutas;permanente;False;True
+25;Guaraná (semente);Perenes comerciais;permanente;False;False
+26;Juta (fibra);Fibras e fumo;temporária;False;False
+27;Laranja;Frutas;permanente;False;False
+28;Limão;Frutas;permanente;False;False
+29;Malva (fibra);Fibras e fumo;temporária;False;False
+30;Mamão;Frutas;permanente;False;False
+31;Mandioca;Raízes e tubérculos;temporária;False;False
+32;Manga;Frutas;permanente;False;False
+33;Maracujá;Frutas;permanente;False;False
+34;Melancia;Frutas;temporária;False;False
+35;Melão;Frutas;temporária;False;False
+36;Milho (em grão);Grãos e oleaginosas;temporária;False;False
+37;Milho verde;Hortaliças;temporária;False;True
+38;Palmito;Perenes comerciais;permanente;False;False
+39;Pimenta-do-reino;Perenes comerciais;permanente;False;False
+40;Soja (em grão);Grãos e oleaginosas;temporária;False;False
+41;Sorgo (em grão);Grãos e oleaginosas;temporária;False;False
+42;Tangerina;Frutas;permanente;False;False
+43;Tomate;Hortaliças;temporária;False;False
+44;Urucum (semente);Perenes comerciais;permanente;False;False
